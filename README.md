@@ -16,20 +16,20 @@ Neptune is a lightweight solution designed for:
 &nbsp;
 
 
-### Quick installation
+### Getting started
 
 **Step 1:** Sign up for a **[free account](https://neptune.ai/register)**
 
 **Step 2:** Install Neptune client library
-```
+```bash
 pip install neptune-client
 ```
 **Step 3:** Connect Neptune to your code
-```
+```python
 import neptune.new as neptune
 
-run = neptune.init(project='common/quickstarts',
-                   api_token='ANONYMOUS')
+run = neptune.init(project="common/quickstarts",
+                   api_token="ANONYMOUS")
 
 run["parameters"] = {"batch_size": 64,
                      "dropout": 0.2,
@@ -92,6 +92,7 @@ You can [compare model-building runs](https://docs.neptune.ai/you-should-know/co
 
 
 ***Filter and organize***
+
 As well as filter, sort, and group model training runs using [highly configurable dashboards](https://docs.neptune.ai/you-should-know/organizing-and-filtering-runs).
 
 <div align="center">
@@ -100,8 +101,9 @@ As well as filter, sort, and group model training runs using [highly configurabl
 </div>
 &nbsp;
 
+***Collaborate***
 
-And most importantly improve [team management and collaboration](https://docs.neptune.ai/you-should-know/collaboration-in-neptune) by grouping all experiments into projects and workspaces and quickly sharing any result or visualization within the team.
+And improve [team management and collaboration](https://docs.neptune.ai/you-should-know/collaboration-in-neptune) by grouping all experiments into projects and workspaces and quickly sharing any result or visualization within the team.
 
 <div align="center">
      <img border="0" alt="W3Schools" src="https://neptune.ai/wp-content/uploads/Collaboration.gif" width="600">
@@ -124,7 +126,7 @@ Integrations available:
   <img src="https://neptune.ai/wp-content/uploads/PyTorch-Lightning.png" width="350" /><br><br>
   
 Example:
-```
+```python
 from pytorch_lightning import Trainer
 from pytorch_lightning.loggers import NeptuneLogger
  
@@ -156,7 +158,7 @@ trainer.fit(my_model, my_dataloader)
   <img src="https://neptune.ai/wp-content/uploads/TensorFowKeras.png" width="400" /><br><br>
   
 Example:
-```
+```python
 import tensorflow as tf
 import neptune.new as neptune
 from neptune.new.integrations.tensorflow_keras import NeptuneCallback
@@ -203,7 +205,7 @@ model.fit(x_train, y_train, epochs=5, batch_size=64, callbacks=[neptune_cbk])
   <img src="https://neptune.ai/wp-content/uploads/Scikit-learn.png" width="200" /><br><br>
 
 Example:
-```
+```python
 from sklearn.datasets import load_digits
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.model_selection import train_test_split
@@ -251,7 +253,7 @@ run["cls_summary"] = npt_utils.create_classifier_summary(
   <img src="https://neptune.ai/wp-content/uploads/fastai-1.png" width="150" /><br><br>
 
 Example:
-```
+```python
 import fastai
 from neptune.new.integrations.fastai import NeptuneCallback
 from fastai.vision.all import *
@@ -285,7 +287,7 @@ run.stop()
   <img src="https://neptune.ai/wp-content/uploads/Optuna-1.png" width="300" /><br><br>
 
 Example:
-```
+```python
 import lightgbm as lgb
 import neptune.new as neptune
 import neptune.new.integrations.optuna as optuna_utils
